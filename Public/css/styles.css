@@ -2,7 +2,6 @@ body {
     font-family: Arial;
     margin: 0;
     height: 100%;
-    margin-right: 2em;
     background: rgb(227 227 227);
 }
 
@@ -36,6 +35,7 @@ html {
 nav {
     height: 41px;
     background-color: #493843 !important;
+    line-height: 40px !important;
 }
 
 nav:hover {
@@ -52,7 +52,11 @@ nav ul li.brand-logo {
 }
 
 nav ul li.brand-logo a {
-    font-size: 50px
+    font-size: 50px;
+}
+
+nav i.material-icons {
+    height: 40px !important;
 }
 
 nav, ul.submenu {
@@ -123,18 +127,18 @@ section {
 
 /**** styling for user forms ****/
 .account-body {
-    background: rgb(227 227 227);
+    background: rgb(227, 227, 227);
 }
 
 .account-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     border: .5px solid grey;
     border-radius: 10px;
     background: white;
-    margin-top: 50px;
-    margin-left: 250px;
-    margin-right: 250px;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .account-user {
@@ -187,10 +191,25 @@ section {
     text-align: center;
 }
 
+/* login media query*/
+@media screen and (max-width: 1024px) {
+    .account-container .row .col {
+      float: none !important;
+      width: 80%;
+      margin: auto;
+    }
+
+    .vl {
+        border-left: 1px solid #e0e0e0;
+        height: 510px;
+        position: absolute;
+        left: 0;
+        margin-left: -3px;
+        visibility: hidden;
+      }
+}
 
 /*** nav media query ****/
-
-
 @media screen and (max-width:660px) {
     nav ul li {
         display: block;
@@ -243,7 +262,6 @@ section {
         color: black;
         opacity: 1;
         border-radius: 5px;
-        padding: 0;
         right: 0;
         left: 356px;
     }
@@ -251,8 +269,17 @@ section {
     ul.submenu, ul.submenu a {
         opacity: 1;
         color: black;
+        padding: 0 !important;
     }
 
+    nav ul a {
+        font-size: 1rem;
+        color: #fff;
+        display: block;
+        padding: 0 !important;
+        cursor: pointer;
+        text-align: center;
+    }
 
     .user > a:nth-child(1) {
         position: relative;
@@ -280,11 +307,16 @@ section {
         display: flex;
         justify-content: center;
     }
+
+    nav ul a, ul.submenu > a {
+        padding: 0 !important;
+    }
     
     nav ul.submenu {
         position: fixed;
         overflow: hidden;
         height: 0;
+        padding: 0 !important;
         border-radius: 0 0 5px 5px;
         z-index: 99998;
     }
@@ -313,15 +345,19 @@ section {
         left: 226px;
     }
 
+    nav ul a, ul.submenu a {
+        padding: 0 !important;
+    }
+
     nav ul li:hover ul.submenu {
         height: 170px;
         z-index: 1000;
     } 
-
-    .user > a:nth-child(1) {
+  .user > a:nth-child(1) {
         position: relative;
         top: 40px;
     }
+
 }
 
 /**** end of nav media query ****/
@@ -831,7 +867,11 @@ article.location > address > span {
         height: calc(38vh - 100px);
         background-position-y: -49px;
       }
+
+      nav ul li.brand-logo a {
+        font-size: 30px !important;
   }
+}
     @media screen and (max-width: 500px) {
         .column {
           -ms-flex: 20%;
@@ -850,3 +890,8 @@ article.location > address > span {
             width: 80%;
           }
   }
+
+
+
+
+
